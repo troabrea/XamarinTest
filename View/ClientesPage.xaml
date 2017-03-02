@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage x:Class="FormsTestApp.ClientesPage"
+             xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+		Title = "Clientes" IsBusy="{Binding IsBusy}">
+    <ListView ItemsSource="{Binding Clientes}" IsPullToRefreshEnabled="true" IsRefreshing="{Binding IsBusy}" RefreshCommand="{Binding RefreshCommand}" >
+		<ListView.ItemTemplate>
+			<DataTemplate>
+				<TextCell Text="{Binding Name}" Detail="{Binding Account}"/>
+			</DataTemplate>
+		</ListView.ItemTemplate>
+	</ListView>
+</ContentPage>

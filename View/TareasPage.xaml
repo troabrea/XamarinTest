@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage x:Class="FormsTestApp.TareasPage"
+             xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+			Title="Tareas">
+	<ContentPage.ToolbarItems>
+		<ToolbarItem Text="Add" Command="{Binding AddTaskCommand}"/>
+		<ToolbarItem Text="Toggle" Command="{Binding ToggleCompletedCommand}"/>
+	</ContentPage.ToolbarItems>
+    <ListView ItemsSource="{Binding Tareas}" SelectedItem="{Binding SelectedTarea, Mode=TwoWay}">
+		<ListView.ItemTemplate>
+			<DataTemplate>
+				<ViewCell>
+					<StackLayout Orientation="Horizontal" Padding="10">
+						<Label Text="{Binding Descripcion}" HorizontalOptions="StartAndExpand"/>
+						<Switch IsToggled="{Binding Completada}" HorizontalOptions="End"/>
+					</StackLayout>
+				</ViewCell>
+			</DataTemplate>
+		</ListView.ItemTemplate>
+	</ListView>
+</ContentPage>
