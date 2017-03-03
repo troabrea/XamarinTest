@@ -6,7 +6,7 @@
     <ListView ItemsSource="{Binding Clientes}" IsPullToRefreshEnabled="true" IsRefreshing="{Binding IsBusy}" RefreshCommand="{Binding RefreshCommand}" >
 		<ListView.ItemTemplate>
 			<DataTemplate>
-				<TextCell Text="{Binding Name}" Detail="{Binding Account}"/>
+				<TextCell Text="{Binding Name}" Detail="{Binding Phone}"/>
 			</DataTemplate>
 		</ListView.ItemTemplate>
 	</ListView>
